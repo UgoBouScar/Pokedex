@@ -1,20 +1,30 @@
 import React from "react";
 
+
 function NavBar(props) {
-    return (
-      <div style={{ 
-        position: "fixed", 
-        top: "0", 
-        width: "100%", 
-        backgroundColor: props.color 
-      }}>
+  const handlePlusClick = () => {
+    props.handlePlusClick();
+    alert(props.shout);
+  };
+
+  const handleMinusClick = () => {
+    props.handleMinusClick();
+    alert(props.shout);
+  };
+  return (
+    <div style={{ 
+      position: "fixed", 
+      top: "0", 
+      width: "100%", 
+      backgroundColor: props.color 
+    }}>
       
     
       {props.index > 0 ? (
-        <button onClick={props.handleMinusClick}>Précèdent</button>
+        <button onClick={handleMinusClick}>Précèdent</button>
       ) : null}
       {props.index < 4 ? (
-        <button onClick={props.handlePlusClick}>Suivant</button>
+        <button onClick={handlePlusClick}>Suivant</button>
       ) : null}
    
    </div>
